@@ -1,0 +1,54 @@
+ <% include headers%>
+<title><%= title %></title>
+    </head>
+    <body>
+        <% include navigation%> 
+       <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p-0">
+                        <% if(typeof errors !== 'undefined'){ %>
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong><%= errors.category.msg %></strong> 
+                        </div>
+                       <%}else if(typeof successResponse !== 'undefined'){%>
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong><%= successResponse %></strong> 
+                        </div>
+                        <%}%>
+                        <div class="card border-grey border-lighten-3 mt-3">
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h4>Add New Password Category</h4>
+                                </div>
+                                <div class="card-body">
+                                    <form action="/addNewCategory" method="post" class="form-horizontal">
+                                        <div class="form-body" style=" padding: 10px 30px 0px ">
+                                            <div class="form-group">
+                                                <label>
+                                                    <h5>Category Name:</h5>
+                                                </label>
+                                                <input
+                                                    name="category"
+                                                    type="text"
+                                                    placeholder="Enter Your Category"
+                                                    class="form-control" />
+                                            </div>
+                                            <button type="submit" class="btn btn-secondary round">Add Category</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-footer">
+                                    <p><a href="/passwordCategory">View All Category List</a> </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </body>
+</html>
+

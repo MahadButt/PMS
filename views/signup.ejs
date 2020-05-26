@@ -1,0 +1,85 @@
+ <% include headers%>
+<title><%= title %></title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 mt-4 p-0">
+                        <h2 class="text-center"><%= title %></h2>
+                        <% if(typeof msg !== 'undefined'){ %>
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong><%= msg %></strong> 
+                        </div>
+                        <%}else if(typeof successResponse !== 'undefined'){%>
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong><%= successResponse %></strong> 
+                        </div>
+                        <%}%>
+                        <div class="card border-grey border-lighten-3 mt-3">
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <h4>Signup</h4>
+                                </div>
+                                <div class="card-body">
+
+                                    <form action="/signup" method="post" class="form-horizontal">
+                                        <div class="form-body" style=" padding: 10px 30px 0px ">
+                                            <div class="form-group">
+                                                <label>
+                                                    <h5>User Name:</h5>
+                                                </label>
+                                                <input
+                                                    name="user_name"
+                                                    type="text"
+                                                    placeholder="Enter Your Name"
+                                                    class="form-control" required />
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    <h5>Email:</h5>
+                                                </label>
+                                                <input
+                                                    name="user_email"
+                                                    type="email"
+                                                    placeholder="Enter Your Email"
+                                                    class="form-control" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    <h5>Password:</h5>
+                                                </label>
+                                                <input
+                                                    name="user_password"
+                                                    type="password"
+                                                    placeholder="Enter Your Password"
+                                                    class="form-control" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    <h5>Confirm Password:</h5>
+                                                </label>
+                                                <input
+                                                    name="user_cpassword"
+                                                    type="password"
+                                                    placeholder="Please Confirm Password"
+                                                    class="form-control" required/>
+                                            </div>
+                                            <button type="submit" class="btn btn-secondary round btn-block mb-0">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-footer">
+                                    <p>Already have account? <a href="/"> Login here</a> </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </body>
+</html>

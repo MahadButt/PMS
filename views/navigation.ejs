@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top pl-5 mb-5">
+    <a class="navbar-brand" href="#"><%= title %></a>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="/dashboard">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Password Category
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/addNewCategory">Add New Category</a>
+                <a class="dropdown-item" href="/passwordCategory">View All Category</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Password Details
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/addNewPassword">Add New Password</a>
+                <a class="dropdown-item" href="/viewAllPassword">View All Passwords</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+        </li>
+    </ul>
+    <a class="navbar-brand" href="#">LoggedIn As: <% if(loginUser){%> <%= loginUser %><%}%></a>
+</nav>

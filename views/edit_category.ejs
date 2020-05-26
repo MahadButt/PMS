@@ -1,0 +1,41 @@
+<% include headers%>
+<title><%= title %></title>
+</head>
+<body>
+    <% include navigation%> 
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p-0">
+                    <div class="card border-grey border-lighten-3 mt-3">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h4>Edit Password Category</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="/passwordCategory/edit" method="post" class="form-horizontal">
+                                    <div class="form-body" style=" padding: 10px 30px 0px ">
+                                        <div class="form-group">
+                                            <label>
+                                                <h5>Category Name:</h5>
+                                            </label>
+                                            <input
+                                                name="category"
+                                                type="text"
+                                                placeholder="Enter Your Category"
+                                                class="form-control" 
+                                                value="<%= data.password_category_name %>"/>
+                                        </div>
+                                        <button type="submit" class="btn btn-secondary round">Save Category</button>
+                                    </div>
+                                    <input type="hidden" name="id" value="<%= data._id %>">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</body>
+</html>
